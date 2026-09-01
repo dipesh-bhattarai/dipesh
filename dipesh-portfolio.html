@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -19,14 +19,22 @@
   <body>
     <header>
       <nav>
-        <a href="#top" class="nav-name">Dipesh Bhattarai</a>
+        <div class="nav-left">
+          <span class="nav-logo">D</span>
+          <a href="#top" class="nav-name">Dipesh Bhattarai</a>
+        </div>
+
         <ul class="nav-links" id="navLinks">
+          <li><a href="#top" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <a href="#contact" class="hire-btn">Hire Me</a>
+
         <button
           class="nav-toggle"
           id="navToggle"
@@ -38,92 +46,62 @@
     </header>
 
     <main id="top">
-      <!-- HERO -->
-      <section class="hero" style="border-bottom: 1px solid var(--border)">
+      <section class="hero">
         <div class="wrap hero-grid">
-          <div>
-            <div class="eyebrow-line">
-              <span class="status-dot"></span>
-              <span class="mono"
-                >Open to opportunities in ML & software engineering</span
-              >
+          <div class="hero-copy reveal">
+            <div class="availability-pill">Available for AI/ML Roles</div>
+
+            <h1>Hi, I'm <span class="text-gradient">Dipesh</span></h1>
+
+            <div class="hero-role">
+              <strong>AI/ML Engineer</strong> · Generative AI · Machine Learning
+              · LLM Applications
             </div>
-            <h1>Dipesh Bhattarai</h1>
-            <div class="hero-role">AI/ML Engineer</div>
+
             <p class="lede">
-              I build models that turn raw data into working predictions — from
-              LSTM language models to deployed FastAPI services — and the
-              interfaces people use to reach them.
+              I build intelligent AI systems that solve real-world problems —
+              from large language models and retrieval-augmented generation
+              pipelines to production-ready machine learning applications.
+              Passionate about pushing the boundaries of what AI can do for
+              people and businesses.
             </p>
+
             <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary">View projects</a>
-              <a href="#contact" class="btn btn-ghost">Get in touch</a>
+              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="#contact" class="btn btn-secondary">Download Resume</a>
+            </div>
+
+            <div class="stat-row">
+              <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <span class="stat-label">AI Projects</span>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">5+</div>
+                <span class="stat-label">Technologies</span>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">B.Tech</div>
+                <span class="stat-label">AI &amp; DS</span>
+              </div>
             </div>
           </div>
 
-          <div class="curve-box">
-            <div class="curve-box-head">
-              <span class="mono">training_loss.log</span>
-              <span class="mono val">epoch 40/40</span>
+          <div class="hero-visual reveal">
+            <div class="profile-orb">
+              <div class="profile-figure"></div>
             </div>
-            <svg
-              viewBox="0 0 320 170"
-              width="100%"
-              height="auto"
-              role="img"
-              aria-label="Illustrative chart of a decreasing training loss curve"
-            >
-              <line
-                x1="0"
-                y1="150"
-                x2="320"
-                y2="150"
-                stroke="var(--border)"
-                stroke-width="1"
-              />
-              <line
-                x1="0"
-                y1="100"
-                x2="320"
-                y2="100"
-                stroke="var(--border)"
-                stroke-width="1"
-              />
-              <line
-                x1="0"
-                y1="50"
-                x2="320"
-                y2="50"
-                stroke="var(--border)"
-                stroke-width="1"
-              />
-              <path
-                id="lossPath"
-                d="M0,20 C40,55 55,90 90,105 C130,122 150,128 190,136 C230,142 260,146 320,150"
-                fill="none"
-                stroke="var(--accent-2)"
-                stroke-width="2"
-                opacity="0.55"
-              />
-              <path
-                id="lossPath2"
-                d="M0,8 C35,40 60,70 95,95 C135,116 165,126 200,134 C245,142 280,146 320,148"
-                fill="none"
-                stroke="var(--accent)"
-                stroke-width="2.5"
-              />
-            </svg>
-            <div class="curve-box-head" style="margin-top: 6px">
-              <span class="mono" style="color: var(--accent-2)">train</span>
-              <span class="mono" style="color: var(--accent)">val</span>
-            </div>
+            <div class="float-tag tag-llm">LLMs</div>
+            <div class="float-tag tag-langchain">LangChain</div>
+            <div class="float-tag tag-python">PyTorch</div>
+            <div class="float-tag tag-pytorch">Python</div>
+            <div class="float-tag tag-rag">RAG</div>
           </div>
         </div>
       </section>
 
-      <!-- ABOUT -->
       <section id="about">
-        <div class="wrap about-grid">
+        <div class="wrap about-grid reveal">
           <div class="avatar-placeholder">
             <svg
               viewBox="0 0 24 24"
@@ -131,11 +109,12 @@
               stroke="currentColor"
               stroke-width="1.5"
             >
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
             </svg>
             <span>Add profile photo<br />(square, min 500×500px)</span>
           </div>
+
           <div class="about-copy">
             <p>
               <strong
@@ -170,27 +149,27 @@
               </div>
               <div>
                 <span class="mono">Focus</span>
-                <span class="fact-val">Machine learning & deep learning</span>
+                <span class="fact-val"
+                  >Machine learning &amp; deep learning</span
+                >
               </div>
               <div>
                 <span class="mono">Also builds</span>
-                <span class="fact-val">Web apps & APIs</span>
+                <span class="fact-val">Web apps &amp; APIs</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PROJECTS -->
       <section id="projects">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
             <h2>Projects</h2>
-            <span class="mono">6 selected</span>
+            <span class="section-kicker">06 / Selected</span>
           </div>
 
-          <!-- 1 -->
-          <div class="project-row">
+          <div class="project-row reveal">
             <div class="project-media">
               <svg
                 viewBox="0 0 24 24"
@@ -198,8 +177,8 @@
                 stroke="currentColor"
                 stroke-width="1.5"
               >
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M3 15l5-5 4 4 5-6 4 4" />
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <path d="M3 15l5-5 4 4 5-6 4 4"></path>
               </svg>
               <span>Screenshot placeholder — QuoteNext</span>
             </div>
@@ -213,9 +192,9 @@
                 long-range context retention.
               </p>
               <div class="tag-row">
-                <span class="tag">Python</span
-                ><span class="tag">TensorFlow/Keras</span
-                ><span class="tag">Streamlit</span>
+                <span class="tag">Python</span>
+                <span class="tag">TensorFlow/Keras</span>
+                <span class="tag">Streamlit</span>
               </div>
               <div class="project-links">
                 <a
@@ -232,9 +211,9 @@
                   >
                     <path
                       d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
-                    />
-                    <path d="M15 3h6v6" />
-                    <path d="M10 14L21 3" />
+                    ></path>
+                    <path d="M15 3h6v6"></path>
+                    <path d="M10 14L21 3"></path>
                   </svg>
                   Live demo
                 </a>
@@ -242,8 +221,7 @@
             </div>
           </div>
 
-          <!-- 2 -->
-          <div class="project-row reverse">
+          <div class="project-row reverse reveal">
             <div class="project-media">
               <svg
                 viewBox="0 0 24 24"
@@ -251,8 +229,8 @@
                 stroke="currentColor"
                 stroke-width="1.5"
               >
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M3 15l5-5 4 4 5-6 4 4" />
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <path d="M3 15l5-5 4 4 5-6 4 4"></path>
               </svg>
               <span>Screenshot placeholder — Heart Disease Prediction</span>
             </div>
@@ -266,8 +244,8 @@
                 compared, with feature engineering used to improve accuracy.
               </p>
               <div class="tag-row">
-                <span class="tag">Python</span
-                ><span class="tag">Scikit-Learn</span>
+                <span class="tag">Python</span>
+                <span class="tag">Scikit-Learn</span>
               </div>
               <div class="project-links">
                 <a
@@ -284,9 +262,9 @@
                   >
                     <path
                       d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
-                    />
-                    <path d="M15 3h6v6" />
-                    <path d="M10 14L21 3" />
+                    ></path>
+                    <path d="M15 3h6v6"></path>
+                    <path d="M10 14L21 3"></path>
                   </svg>
                   Live demo
                 </a>
@@ -294,8 +272,7 @@
             </div>
           </div>
 
-          <!-- 3 -->
-          <div class="project-row">
+          <div class="project-row reveal">
             <div class="project-media">
               <svg
                 viewBox="0 0 24 24"
@@ -303,8 +280,8 @@
                 stroke="currentColor"
                 stroke-width="1.5"
               >
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M3 15l5-5 4 4 5-6 4 4" />
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <path d="M3 15l5-5 4 4 5-6 4 4"></path>
               </svg>
               <span>Screenshot placeholder — Football Predictor</span>
             </div>
@@ -318,10 +295,11 @@
                 the scoreline, with a live win-probability interface.
               </p>
               <div class="tag-row">
-                <span class="tag">Python</span><span class="tag">XGBoost</span
-                ><span class="tag">LightGBM</span
-                ><span class="tag">CatBoost</span
-                ><span class="tag">Streamlit</span>
+                <span class="tag">Python</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">LightGBM</span>
+                <span class="tag">CatBoost</span>
+                <span class="tag">Streamlit</span>
               </div>
               <div class="project-links">
                 <a
@@ -338,299 +316,220 @@
                   >
                     <path
                       d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
-                    />
-                    <path d="M15 3h6v6" />
-                    <path d="M10 14L21 3" />
+                    ></path>
+                    <path d="M15 3h6v6"></path>
+                    <path d="M10 14L21 3"></path>
                   </svg>
                   Live demo
                 </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4 -->
-          <div class="project-row reverse">
-            <div class="project-media">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M3 15l5-5 4 4 5-6 4 4" />
-              </svg>
-              <span>Screenshot placeholder — House Price Prediction</span>
-            </div>
-            <div class="project-copy">
-              <span class="mono project-index">04 / Full-stack ML</span>
-              <h3>House Price Prediction API & Web App</h3>
-              <p>
-                An end-to-end price prediction system using a
-                RandomForestRegressor on the California Housing dataset, exposed
-                through a FastAPI REST API with Pydantic validation and
-                single/batch endpoints, paired with an independent Streamlit
-                frontend.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Python</span
-                ><span class="tag">Scikit-Learn</span
-                ><span class="tag">FastAPI</span
-                ><span class="tag">Streamlit</span>
-              </div>
-              <div class="project-links">
-                <a
-                  class="project-link"
-                  href="https://housing-prediction-by-dipesh.streamlit.app/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
-                    />
-                    <path d="M15 3h6v6" />
-                    <path d="M10 14L21 3" />
-                  </svg>
-                  Live demo
-                </a>
-                <a
-                  class="project-link secondary"
-                  href="https://housing-fastapi-1.onrender.com/docs"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  API docs
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 5 -->
-          <div class="project-row">
-            <div class="project-media">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M3 15l5-5 4 4 5-6 4 4" />
-              </svg>
-              <span>Screenshot placeholder — COVID-19 Analysis</span>
-            </div>
-            <div class="project-copy">
-              <span class="mono project-index">05 / Data analysis</span>
-              <h3>COVID-19 Data Analysis</h3>
-              <p>
-                Exploratory analysis of global COVID-19 case, recovery and
-                mortality trends using Pandas and NumPy, with Matplotlib and
-                Seaborn visualizations built to surface patterns across regions
-                and time periods.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Python</span><span class="tag">Pandas</span
-                ><span class="tag">NumPy</span
-                ><span class="tag">Matplotlib</span
-                ><span class="tag">Seaborn</span>
-              </div>
-              <div class="project-links">
-                <a
-                  class="project-link"
-                  href="https://github.com/dipesh-bhattarai/Covid-19-Analysis"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
-                    />
-                  </svg>
-                  View on GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 6 -->
-          <div class="project-row reverse">
-            <div class="project-media">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M3 15l5-5 4 4 5-6 4 4" />
-              </svg>
-              <span>Screenshot placeholder — E-Commerce Website</span>
-            </div>
-            <div class="project-copy">
-              <span class="mono project-index">06 / Web development</span>
-              <h3>E-Commerce Website</h3>
-              <p>
-                A responsive e-commerce web application with product listings,
-                shopping cart functionality and dynamic, stateful user
-                interactions built entirely with React.
-              </p>
-              <div class="tag-row">
-                <span class="tag">HTML</span><span class="tag">CSS</span
-                ><span class="tag">JavaScript</span
-                ><span class="tag">React</span>
-              </div>
-              <div class="project-links">
-                <span class="no-demo"
-                  >No live demo available — code on request</span
-                >
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SKILLS -->
       <section id="skills">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head reveal">
             <h2>Skills</h2>
-            <span class="mono">Tools & languages</span>
+            <span class="section-kicker">Tools &amp; languages</span>
           </div>
 
-          <div class="skills-grid">
+          <div class="skills-grid reveal">
             <div class="skill-group">
               <h4>Languages</h4>
               <div class="skill-tags">
-                <span class="tag">Python</span><span class="tag">C</span
-                ><span class="tag">C++</span><span class="tag">JavaScript</span
-                ><span class="tag">PHP</span>
+                <span class="tag">Python</span>
+                <span class="tag">C</span>
+                <span class="tag">C++</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">PHP</span>
               </div>
             </div>
+
             <div class="skill-group">
-              <h4>Machine learning & deep learning</h4>
+              <h4>Machine learning &amp; deep learning</h4>
               <div class="skill-tags">
-                <span class="tag">Scikit-Learn</span
-                ><span class="tag">PyTorch</span
-                ><span class="tag">TensorFlow/Keras</span
-                ><span class="tag">XGBoost</span
-                ><span class="tag">LightGBM</span
-                ><span class="tag">CatBoost</span><span class="tag">ANN</span
-                ><span class="tag">CNN</span><span class="tag">RNN</span
-                ><span class="tag">LSTM</span>
+                <span class="tag">Scikit-Learn</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">TensorFlow/Keras</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">LightGBM</span>
+                <span class="tag">CatBoost</span>
+                <span class="tag">ANN</span>
+                <span class="tag">CNN</span>
+                <span class="tag">RNN</span>
+                <span class="tag">LSTM</span>
               </div>
             </div>
+
             <div class="skill-group">
               <h4>Data science</h4>
               <div class="skill-tags">
-                <span class="tag">Pandas</span><span class="tag">NumPy</span
-                ><span class="tag">Matplotlib</span
-                ><span class="tag">Seaborn</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">NumPy</span>
+                <span class="tag">Matplotlib</span>
+                <span class="tag">Seaborn</span>
               </div>
             </div>
+
             <div class="skill-group">
               <h4>Web development</h4>
               <div class="skill-tags">
-                <span class="tag">HTML</span><span class="tag">CSS</span
-                ><span class="tag">React</span><span class="tag">FastAPI</span
-                ><span class="tag">Streamlit</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">React</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Streamlit</span>
               </div>
             </div>
+
             <div class="skill-group">
-              <h4>Tools & databases</h4>
+              <h4>Tools &amp; databases</h4>
               <div class="skill-tags">
-                <span class="tag">Git</span><span class="tag">GitHub</span
-                ><span class="tag">SQL</span><span class="tag">VS Code</span>
+                <span class="tag">Git</span>
+                <span class="tag">GitHub</span>
+                <span class="tag">SQL</span>
+                <span class="tag">VS Code</span>
               </div>
             </div>
           </div>
 
-          <div class="soft-skills">
+          <div class="soft-skills reveal">
             <h4>Also brings to a team</h4>
             <div class="soft-skills-row">
-              <span>Analytical thinking</span><span>Problem solving</span
-              ><span>Team collaboration</span><span>Adaptability</span
-              ><span>Time management</span><span>Attention to detail</span
-              ><span>Critical thinking</span>
+              <span>Analytical thinking</span>
+              <span>Problem solving</span>
+              <span>Team collaboration</span>
+              <span>Adaptability</span>
+              <span>Time management</span>
+              <span>Attention to detail</span>
+              <span>Critical thinking</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- EDUCATION -->
-      <section id="education">
-        <div class="wrap">
-          <div class="section-head">
-            <h2>Education</h2>
+      <section id="education" class="education-section">
+        <div class="wrap education-wrap">
+          <div class="section-head reveal">
+            <h2>Education Journey</h2>
+            <span class="section-kicker">06 / Education</span>
           </div>
-          <div class="edu-card">
-            <div class="mono edu-years">2023 — 2027</div>
-            <div>
-              <h3>
-                Bachelor of Science in Computer Science and Information
-                Technology
-              </h3>
-              <div class="edu-school">Tribhuvan University</div>
-              <span class="mono edu-course-label">Relevant coursework</span>
-              <div class="course-list">
-                <span class="tag">Artificial Intelligence</span>
-                <span class="tag">Data Structures</span>
-                <span class="tag">Database Management Systems</span>
-                <span class="tag">Operating Systems</span>
-                <span class="tag">Computer Networks</span>
-                <span class="tag">Web Technology</span>
+
+          <div class="education-timeline">
+            <div class="timeline-item reveal">
+              <div class="timeline-card">
+                <span class="timeline-year">2008 — 2020</span>
+                <h3> Upto 10th Grade</h3>
+                <div class="timeline-school">Surya Kiran Academy</div>
+                <p>
+                  Built a strong academic base with a focus on discipline,
+                  consistency, and curiosity. This was the stage where my
+                  interest in logic, problem-solving, and structured learning
+                  began to grow.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-card">
+                <span class="timeline-year">2021 — 2023</span>
+                <h3>+2 (Science)</h3>
+                <div class="timeline-school">Orchid College</div>
+                <p>
+                  Pursued Physics, Chemistry, Biology and Mathematics with a stronger
+                  focus on analytical thinking and scientific reasoning. This
+                  was the period that deepened my interest in technology and
+                  computational problem solving.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-card">
+                <span class="timeline-year">2023 — 2027</span>
+                <h3>
+                  Bachelor of Science in Computer Science and Information
+                  Technology
+                </h3>
+                <div class="timeline-school">Tribhuvan University</div>
+                <p>
+                  Currently advancing toward my degree while building practical
+                  projects in AI, machine learning, and software engineering.
+                  This stage combines academic foundation with hands-on
+                  application, especially in data-driven product development.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CONTACT -->
       <section id="contact" class="contact">
-        <div class="wrap contact-inner">
-          <div>
-            <h2>Let's build something with data.</h2>
-            <p>
-              Open to AI/ML engineering roles, internships and collaborations.
-              The fastest way to reach me is email — I read everything.
-            </p>
+        <div class="wrap contact-grid">
+          <div class="info-panel reveal">
+            <div class="section-head" style="display: block; margin-bottom: 0">
+              <span class="section-kicker">06 / Contact</span>
+              <h2 style="margin-top: 12px">Let's Connect</h2>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">✉</div>
+              <div class="info-copy">
+                <span class="info-label">Email</span>
+                <span>dipesh.bhattarai.dipu@email.com</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">☎</div>
+              <div class="info-copy">
+                <span class="info-label">Phone</span>
+                <span>+91 98765 43210</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">⌖</div>
+              <div class="info-copy">
+                <span class="info-label">Location</span>
+                <span>India</span>
+              </div>
+            </div>
+
+            <div>
+              <p style="color: var(--text-muted); margin-bottom: 12px">
+                Find me on
+              </p>
+              <div class="social-row">
+                <span class="social-pill">GitHub</span>
+                <span class="social-pill">LinkedIn</span>
+                <span class="social-pill">Hugging Face</span>
+                <span class="social-pill">Kaggle</span>
+              </div>
+            </div>
           </div>
-          <div class="contact-list">
-            <a href="mailto:dipesh.bhattarai.dipu@email.com"
-              >Email
-              <span class="mono">dipesh.bhattarai.dipu@email.com</span></a
-            >
-            <a href="tel:+9779863711073"
-              >Phone <span class="mono">+977 986-371-1073</span></a
-            >
-            <a
-              href="https://linkedin.com/in/dipesh-bhattarai"
-              target="_blank"
-              rel="noopener"
-              >LinkedIn <span class="mono">/in/dipesh-bhattarai</span></a
-            >
-            <a
-              href="https://github.com/dipesh-bhattarai"
-              target="_blank"
-              rel="noopener"
-              >GitHub <span class="mono">/dipesh-bhattarai</span></a
-            >
-            <a
-              href="https://www.instagram.com/dipesh._.bhattaraii"
-              target="_blank"
-              rel="noopener"
-              >Instagram <span class="mono">@dipesh._.bhattaraii</span></a
-            >
+
+          <div class="contact-form-panel reveal">
+            <h3>Send a Message</h3>
+            <form class="form-grid">
+              <label class="form-field">
+                <span>Name</span>
+                <input type="text" placeholder="Your name" />
+              </label>
+              <label class="form-field">
+                <span>Email</span>
+                <input type="email" placeholder="your@email.com" />
+              </label>
+              <label class="form-field full">
+                <span>Message</span>
+                <textarea
+                  placeholder="Tell me about the opportunity or your project..."
+                ></textarea>
+              </label>
+              <button type="submit" class="send-btn">✈ Send Message</button>
+            </form>
           </div>
         </div>
       </section>
