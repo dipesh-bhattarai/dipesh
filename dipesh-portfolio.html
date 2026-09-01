@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dipesh Bhattarai — AI/ML Engineer</title>
+<meta name="description" content="Portfolio of Dipesh Bhattarai, AI/ML Engineer specializing in predictive modeling and deep learning applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0B1220;
+    --surface: #111A2C;
+    --surface-2: #16213A;
+    --text: #E7ECF5;
+    --text-muted: #92A1B8;
+    --text-dim: #5D6B84;
+    --accent: #4FD8C4;
+    --accent-soft: rgba(79,216,196,0.12);
+    --accent-2: #F2A65A;
+    --border: rgba(231,236,245,0.09);
+    --radius: 6px;
+    --maxw: 960px;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+  ul{ list-style: none; }
+
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  h1, h2, h3, h4{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .mono{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.01em;
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(11,18,32,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  nav{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-name{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--text);
+  }
+
+  .nav-links{
+    display: flex;
+    gap: 32px;
+  }
+
+  .nav-links a{
+    color: var(--text-muted);
+    font-size: 0.94rem;
+    transition: color 0.15s ease;
+    position: relative;
+  }
+  .nav-links a:hover{ color: var(--text); }
+
+  .nav-toggle{
+    display: none;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 96px 0 88px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .eyebrow-line{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dim);
+    margin-bottom: 22px;
+    font-size: 0.86rem;
+  }
+  .status-dot{
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  .hero h1{
+    font-size: clamp(2.4rem, 5.4vw, 3.6rem);
+    line-height: 1.08;
+    margin-bottom: 18px;
+  }
+
+  .hero-role{
+    font-size: 1.15rem;
+    color: var(--accent);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .hero p.lede{
+    color: var(--text-muted);
+    font-size: 1.04rem;
+    max-width: 52ch;
+    margin-bottom: 34px;
+  }
+
+  .hero-actions{
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+  .btn-primary{
+    background: var(--accent);
+    color: #06110F;
+  }
+  .btn-primary:hover{ background: #6be3d1; }
+  .btn-ghost{
+    border-color: var(--border);
+    color: var(--text);
+  }
+  .btn-ghost:hover{ border-color: var(--text-dim); background: var(--surface); }
+
+  /* loss curve svg */
+  .curve-box{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 22px 18px;
+  }
+  .curve-box-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .curve-box-head .mono{ color: var(--text-dim); }
+  .curve-box-head .mono.val{ color: var(--accent); }
+
+  #lossPath{
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: draw 2s ease-out forwards 0.3s;
+  }
+  #lossPath2{
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: draw 2s ease-out forwards 0.6s;
+  }
+  @keyframes draw{
+    to{ stroke-dashoffset: 0; }
+  }
+
+  /* ---------- SECTION shell ---------- */
+  section{
+    padding: 76px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-head{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 44px;
+  }
+
+  .section-head h2{
+    font-size: 1.7rem;
+  }
+
+  .section-head .mono{
+    color: var(--text-dim);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .avatar-placeholder{
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    background: var(--surface);
+    border: 1px dashed var(--text-dim);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--text-dim);
+    text-align: center;
+    padding: 16px;
+  }
+  .avatar-placeholder svg{ width: 34px; height: 34px; opacity: 0.7; }
+  .avatar-placeholder span{ font-size: 0.78rem; line-height: 1.4; }
+
+  .about-copy p{
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    max-width: 62ch;
+  }
+  .about-copy p strong{ color: var(--text); font-weight: 500; }
+
+  .about-facts{
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 28px;
+  }
+  .about-facts div{
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+  }
+  .about-facts .mono{ color: var(--text-dim); display:block; margin-bottom: 4px; }
+  .about-facts .fact-val{ font-size: 0.95rem; color: var(--text); }
+
+  /* ---------- PROJECTS ---------- */
+  .project-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    padding: 46px 0;
+    border-top: 1px solid var(--border);
+  }
+  .project-row:first-of-type{ border-top: none; padding-top: 0; }
+  .project-row.reverse .project-media{ order: 2; }
+  .project-row.reverse .project-copy{ order: 1; }
+
+  .project-media{
+    aspect-ratio: 16/10;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px dashed var(--text-dim);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-dim);
+    text-align: center;
+    padding: 20px;
+  }
+  .project-media svg{ width: 28px; height: 28px; opacity: 0.65; }
+  .project-media span{ font-size: 0.78rem; }
+
+  .project-index{
+    color: var(--text-dim);
+    margin-bottom: 10px;
+  }
+
+  .project-copy h3{
+    font-size: 1.28rem;
+    margin-bottom: 10px;
+  }
+
+  .project-copy p{
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    max-width: 48ch;
+  }
+
+  .tag-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+  .tag{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 4px 9px;
+    border-radius: 4px;
+  }
+
+  .project-links{
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+  .project-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.15s ease;
+  }
+  .project-link:hover{ border-color: var(--accent); }
+  .project-link.secondary{ color: var(--text-muted); }
+  .project-link.secondary:hover{ color: var(--text); }
+  .project-link svg{ width: 14px; height: 14px; }
+
+  .no-demo{
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 48px;
+  }
+  .skill-group h4{
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .skill-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-tags .tag{ color: var(--text-muted); }
+
+  .soft-skills{
+    margin-top: 46px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+  }
+  .soft-skills h4{
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .soft-skills-row{
+    color: var(--text-muted);
+    font-size: 0.96rem;
+    line-height: 1.9;
+  }
+  .soft-skills-row span:not(:last-child)::after{
+    content: '';
+    display: inline-block;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--text-dim);
+    margin: 0 12px;
+    vertical-align: middle;
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-card{
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 32px;
+  }
+  .edu-years{ color: var(--accent); }
+  .edu-card h3{ font-size: 1.2rem; margin-bottom: 4px; }
+  .edu-card .edu-school{ color: var(--text-muted); margin-bottom: 18px; }
+  .edu-course-label{ color: var(--text-dim); margin-bottom: 10px; display: block; }
+  .course-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    border-bottom: none;
+    padding-bottom: 96px;
+  }
+  .contact-inner{
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: end;
+  }
+  .contact h2{
+    font-size: 2rem;
+    margin-bottom: 16px;
+    max-width: 14ch;
+  }
+  .contact p{
+    color: var(--text-muted);
+    max-width: 44ch;
+    margin-bottom: 28px;
+  }
+  .contact-list{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .contact-list a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    font-size: 1rem;
+    transition: color 0.15s ease;
+  }
+  .contact-list a:last-child{ border-bottom: 1px solid var(--border); }
+  .contact-list a:hover{ color: var(--accent); }
+  .contact-list a .mono{ color: var(--text-dim); }
+  .contact-list a:hover .mono{ color: var(--accent); }
+
+  footer{
+    padding: 28px 0 40px;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 820px){
+    .wrap{ padding: 0 22px; }
+    nav{ padding: 16px 22px; }
+    .nav-links{
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-direction: column;
+      padding: 8px 22px 20px;
+      gap: 4px;
+      display: none;
+    }
+    .nav-links.open{ display: flex; }
+    .nav-links a{ padding: 10px 0; }
+    .nav-toggle{ display: block; }
+
+    .hero{ padding: 56px 0 56px; }
+    .hero-grid{ grid-template-columns: 1fr; gap: 40px; }
+    .curve-box{ order: -1; }
+
+    .about-grid{ grid-template-columns: 1fr; }
+    .avatar-placeholder{ width: 160px; }
+    .about-facts{ grid-template-columns: 1fr 1fr; }
+
+    .project-row, .project-row.reverse{
+      grid-template-columns: 1fr;
+    }
+    .project-row.reverse .project-media,
+    .project-row.reverse .project-copy{ order: initial; }
+
+    .skills-grid{ grid-template-columns: 1fr; }
+
+    .edu-card{ grid-template-columns: 1fr; gap: 10px; }
+
+    .contact-inner{ grid-template-columns: 1fr; }
+    .contact h2{ max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top" class="nav-name">Dipesh Bhattarai</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="border-bottom:1px solid var(--border);">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow-line">
+          <span class="status-dot"></span>
+          <span class="mono">Open to opportunities in ML & software engineering</span>
+        </div>
+        <h1>Dipesh Bhattarai</h1>
+        <div class="hero-role">AI/ML Engineer</div>
+        <p class="lede">I build models that turn raw data into working predictions — from LSTM language models to deployed FastAPI services — and the interfaces people use to reach them.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View projects</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="curve-box">
+        <div class="curve-box-head">
+          <span class="mono">training_loss.log</span>
+          <span class="mono val">epoch 40/40</span>
+        </div>
+        <svg viewBox="0 0 320 170" width="100%" height="auto" role="img" aria-label="Illustrative chart of a decreasing training loss curve">
+          <line x1="0" y1="150" x2="320" y2="150" stroke="var(--border)" stroke-width="1"/>
+          <line x1="0" y1="100" x2="320" y2="100" stroke="var(--border)" stroke-width="1"/>
+          <line x1="0" y1="50" x2="320" y2="50" stroke="var(--border)" stroke-width="1"/>
+          <path id="lossPath" d="M0,20 C40,55 55,90 90,105 C130,122 150,128 190,136 C230,142 260,146 320,150"
+                fill="none" stroke="var(--accent-2)" stroke-width="2" opacity="0.55"/>
+          <path id="lossPath2" d="M0,8 C35,40 60,70 95,95 C135,116 165,126 200,134 C245,142 280,146 320,148"
+                fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+        </svg>
+        <div class="curve-box-head" style="margin-top:6px;">
+          <span class="mono" style="color:var(--accent-2)">train</span>
+          <span class="mono" style="color:var(--accent)">val</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="avatar-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+        <span>Add profile photo<br>(square, min 500×500px)</span>
+      </div>
+      <div class="about-copy">
+        <p><strong>I'm a Computer Science student and AI/ML engineer based in Nepal</strong>, currently working toward a BSc in CSIT while building a portfolio of applied machine learning projects — from deep learning models to the full-stack apps that put them in front of users.</p>
+        <p>My work sits at the intersection of modeling and deployment: training neural networks (ANN, CNN, RNN, LSTM) and gradient-boosted models with PyTorch, TensorFlow and Scikit-Learn, then shipping them as usable products with FastAPI, Streamlit and React.</p>
+        <p>I'm drawn to problems where data can genuinely improve a decision — risk prediction, forecasting, classification — and I care as much about a clean API contract as I do about a model's accuracy.</p>
+
+        <div class="about-facts">
+          <div>
+            <span class="mono">Based in</span>
+            <span class="fact-val">Nepal</span>
+          </div>
+          <div>
+            <span class="mono">Studying</span>
+            <span class="fact-val">BSc CSIT, Tribhuvan University</span>
+          </div>
+          <div>
+            <span class="mono">Focus</span>
+            <span class="fact-val">Machine learning & deep learning</span>
+          </div>
+          <div>
+            <span class="mono">Also builds</span>
+            <span class="fact-val">Web apps & APIs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <span class="mono">6 selected</span>
+      </div>
+
+      <!-- 1 -->
+      <div class="project-row">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 5-6 4 4"/></svg>
+          <span>Screenshot placeholder — QuoteNext</span>
+        </div>
+        <div class="project-copy">
+          <span class="mono project-index">01 / Deep learning</span>
+          <h3>QuoteNext — LSTM Next-Word Predictor</h3>
+          <p>An LSTM language model (Embedding → LSTM → Dense/Softmax) trained on a curated quotes dataset with a ~9K-word vocabulary, benchmarked against a SimpleRNN baseline to demonstrate better long-range context retention.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">TensorFlow/Keras</span><span class="tag">Streamlit</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://nextwordpredictor-quotenext.streamlit.app/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+              Live demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="project-row reverse">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 5-6 4 4"/></svg>
+          <span>Screenshot placeholder — Heart Disease Prediction</span>
+        </div>
+        <div class="project-copy">
+          <span class="mono project-index">02 / Classification</span>
+          <h3>Heart Disease Prediction System</h3>
+          <p>A classification model estimating heart disease risk from parameters like age, blood pressure, cholesterol and chest pain type. Logistic Regression, Decision Tree and Random Forest were compared, with feature engineering used to improve accuracy.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Scikit-Learn</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://dipesh-2005-heartdisease-prediction-appapp-8j2jvv.streamlit.app/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+              Live demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="project-row">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 5-6 4 4"/></svg>
+          <span>Screenshot placeholder — Football Predictor</span>
+        </div>
+        <div class="project-copy">
+          <span class="mono project-index">03 / Sports analytics</span>
+          <h3>Football Match Outcome Predictor</h3>
+          <p>A web app predicting international match winners and scores using FIFA/Elo ratings and team form across 200+ national teams — multiclass classifiers for the winner, regression models for the scoreline, with a live win-probability interface.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">LightGBM</span><span class="tag">CatBoost</span><span class="tag">Streamlit</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://internationalfootballmatchprediction.streamlit.app/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+              Live demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="project-row reverse">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 5-6 4 4"/></svg>
+          <span>Screenshot placeholder — House Price Prediction</span>
+        </div>
+        <div class="project-copy">
+          <span class="mono project-index">04 / Full-stack ML</span>
+          <h3>House Price Prediction API & Web App</h3>
+          <p>An end-to-end price prediction system using a RandomForestRegressor on the California Housing dataset, exposed through a FastAPI REST API with Pydantic validation and single/batch endpoints, paired with an independent Streamlit frontend.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Scikit-Learn</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://housing-prediction-by-dipesh.streamlit.app/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+              Live demo
+            </a>
+            <a class="project-link secondary" href="https://housing-fastapi-1.onrender.com/docs" target="_blank" rel="noopener">
+              API docs
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="project-row">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 5-6 4 4"/></svg>
+          <span>Screenshot placeholder — COVID-19 Analysis</span>
+        </div>
+        <div class="project-copy">
+          <span class="mono project-index">05 / Data analysis</span>
+          <h3>COVID-19 Data Analysis</h3>
+          <p>Exploratory analysis of global COVID-19 case, recovery and mortality trends using Pandas and NumPy, with Matplotlib and Seaborn visualizations built to surface patterns across regions and time periods.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
+          </div>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/dipesh-bhattarai/Covid-19-Analysis" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="project-row reverse">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 5-6 4 4"/></svg>
+          <span>Screenshot placeholder — E-Commerce Website</span>
+        </div>
+        <div class="project-copy">
+          <span class="mono project-index">06 / Web development</span>
+          <h3>E-Commerce Website</h3>
+          <p>A responsive e-commerce web application with product listings, shopping cart functionality and dynamic, stateful user interactions built entirely with React.</p>
+          <div class="tag-row">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">React</span>
+          </div>
+          <div class="project-links">
+            <span class="no-demo">No live demo available — code on request</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <span class="mono">Tools & languages</span>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <div class="skill-tags">
+            <span class="tag">Python</span><span class="tag">C</span><span class="tag">C++</span><span class="tag">JavaScript</span><span class="tag">PHP</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Machine learning & deep learning</h4>
+          <div class="skill-tags">
+            <span class="tag">Scikit-Learn</span><span class="tag">PyTorch</span><span class="tag">TensorFlow/Keras</span><span class="tag">XGBoost</span><span class="tag">LightGBM</span><span class="tag">CatBoost</span><span class="tag">ANN</span><span class="tag">CNN</span><span class="tag">RNN</span><span class="tag">LSTM</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Data science</h4>
+          <div class="skill-tags">
+            <span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Web development</h4>
+          <div class="skill-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Tools & databases</h4>
+          <div class="skill-tags">
+            <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">SQL</span><span class="tag">VS Code</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft-skills">
+        <h4>Also brings to a team</h4>
+        <div class="soft-skills-row">
+          <span>Analytical thinking</span><span>Problem solving</span><span>Team collaboration</span><span>Adaptability</span><span>Time management</span><span>Attention to detail</span><span>Critical thinking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Education</h2>
+      </div>
+      <div class="edu-card">
+        <div class="mono edu-years">2023 — 2027</div>
+        <div>
+          <h3>Bachelor of Science in Computer Science and Information Technology</h3>
+          <div class="edu-school">Tribhuvan University</div>
+          <span class="mono edu-course-label">Relevant coursework</span>
+          <div class="course-list">
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">Data Structures</span>
+            <span class="tag">Database Management Systems</span>
+            <span class="tag">Operating Systems</span>
+            <span class="tag">Computer Networks</span>
+            <span class="tag">Web Technology</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap contact-inner">
+      <div>
+        <h2>Let's build something with data.</h2>
+        <p>Open to AI/ML engineering roles, internships and collaborations. The fastest way to reach me is email — I read everything.</p>
+      </div>
+      <div class="contact-list">
+        <a href="mailto:dipesh.bhattarai.dipu@email.com">Email <span class="mono">dipesh.bhattarai.dipu@email.com</span></a>
+        <a href="tel:+9779863711073">Phone <span class="mono">+977 986-371-1073</span></a>
+        <a href="https://linkedin.com/in/dipesh-bhattarai" target="_blank" rel="noopener">LinkedIn <span class="mono">/in/dipesh-bhattarai</span></a>
+        <a href="https://github.com/dipesh-bhattarai" target="_blank" rel="noopener">GitHub <span class="mono">/dipesh-bhattarai</span></a>
+        <a href="https://www.instagram.com/dipesh._.bhattaraii" target="_blank" rel="noopener">Instagram <span class="mono">@dipesh._.bhattaraii</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Dipesh Bhattarai — built and maintained by hand.</div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+</body>
+</html>
