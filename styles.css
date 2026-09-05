@@ -34,6 +34,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -693,6 +694,10 @@ section {
 }
 
 @media (max-width: 980px) {
+  nav {
+    padding-inline: 22px;
+  }
+
   .about-layout {
     grid-template-columns: 1fr;
   }
@@ -1222,7 +1227,7 @@ footer {
   }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 900px) {
   .nav-links {
     position: absolute;
     top: 100%;
@@ -1257,6 +1262,283 @@ footer {
 
   .form-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrap {
+    padding-inline: 18px;
+  }
+
+  nav {
+    min-height: 68px;
+    padding: 13px 18px;
+  }
+
+  .nav-left {
+    min-width: 0;
+  }
+
+  .nav-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.25rem;
+  }
+
+  .nav-logo {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  .nav-toggle {
+    flex-shrink: 0;
+  }
+
+  .hero {
+    padding: 34px 0 48px;
+  }
+
+  .hero-grid {
+    gap: 18px;
+  }
+
+  .hero-copy {
+    padding-top: 0;
+  }
+
+  .availability-pill {
+    max-width: 100%;
+    margin-bottom: 22px;
+    padding: 7px 12px;
+    font-size: 0.68rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.7rem, 14vw, 4.2rem);
+    margin-bottom: 18px;
+  }
+
+  .hero-role {
+    font-size: 1.08rem;
+    line-height: 1.5;
+  }
+
+  .hero-copy .lede {
+    font-size: 0.98rem;
+    margin-bottom: 26px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .btn {
+    flex: 1 1 100%;
+    padding: 14px 18px;
+  }
+
+  .stat-row {
+    gap: 18px 24px;
+    justify-content: space-between;
+  }
+
+  .stat-item {
+    min-width: 0;
+    flex: 1 1 28%;
+  }
+
+  .stat-number {
+    font-size: clamp(1.55rem, 8vw, 2.2rem);
+    white-space: nowrap;
+  }
+
+  .stat-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.07em;
+  }
+
+  .hero-visual {
+    min-height: min(86vw, 360px);
+  }
+
+  .profile-orb {
+    width: min(310px, 76vw);
+  }
+
+  .float-tag {
+    padding: 6px 10px;
+    font-size: 0.68rem;
+  }
+
+  .tag-llm {
+    left: 0;
+  }
+
+  .tag-langchain,
+  .tag-pytorch {
+    right: 0;
+  }
+
+  .tag-python {
+    left: 0;
+  }
+
+  .tag-rag {
+    right: 8%;
+  }
+
+  section {
+    padding: 56px 0;
+  }
+
+  .section-head {
+    margin-bottom: 24px;
+  }
+
+  .section-head h2,
+  .about-title {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .about-story,
+  .about-card,
+  .mini-project,
+  .timeline-card,
+  .contact-form-panel {
+    border-radius: 16px;
+  }
+
+  .about-story {
+    padding: 18px 16px 12px;
+  }
+
+  .about-story p {
+    font-size: 0.96rem;
+  }
+
+  .about-card {
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .project-row {
+    gap: 24px;
+    padding: 28px 0;
+  }
+
+  .project-media {
+    border-radius: 14px;
+  }
+
+  .project-copy h3 {
+    font-size: 1.45rem;
+  }
+
+  .project-copy p {
+    font-size: 0.96rem;
+  }
+
+  .other-projects-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .mini-project {
+    padding: 18px;
+  }
+
+  .mini-project-header {
+    align-items: flex-start;
+  }
+
+  .mini-project h3 {
+    font-size: 1.3rem;
+  }
+
+  .soft-skills {
+    margin-top: 34px;
+    padding-top: 26px;
+  }
+
+  .education-timeline {
+    padding-left: 16px;
+  }
+
+  .education-timeline::before {
+    left: 6px;
+  }
+
+  .timeline-item {
+    padding-left: 22px;
+    margin-bottom: 22px;
+  }
+
+  .timeline-item::before {
+    left: -8px;
+    width: 22px;
+    height: 22px;
+    border-width: 3px;
+  }
+
+  .timeline-card {
+    padding: 18px 16px;
+  }
+
+  .timeline-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .timeline-card p {
+    font-size: 0.95rem;
+  }
+
+  .contact-grid {
+    gap: 28px;
+  }
+
+  .info-card {
+    align-items: flex-start;
+    padding: 16px;
+    gap: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-form-panel {
+    padding: 20px 16px 16px;
+  }
+
+  .contact-form-panel h3 {
+    font-size: 1.7rem;
+  }
+
+  footer {
+    padding-inline: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-name {
+    font-size: 1.08rem;
+  }
+
+  .nav-left {
+    gap: 8px;
+  }
+
+  .stat-row {
+    gap: 14px;
+  }
+
+  .stat-label {
+    font-size: 0.56rem;
+  }
+
+  .float-tag {
+    font-size: 0.62rem;
   }
 }
 
