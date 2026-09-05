@@ -1243,6 +1243,10 @@ footer {
 }
 
 @media (max-width: 900px) {
+  .other-projects-grid {
+    grid-template-columns: 1fr;
+  }
+
   .nav-links {
     position: absolute;
     top: 100%;
