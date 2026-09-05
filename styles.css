@@ -215,6 +215,7 @@ main {
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   gap: 40px;
+  min-width: 0;
 }
 
 .hero-copy {
@@ -354,6 +355,7 @@ main {
   display: grid;
   place-items: center;
   min-height: 560px;
+  min-width: 0;
 }
 
 .hero-visual::before {
